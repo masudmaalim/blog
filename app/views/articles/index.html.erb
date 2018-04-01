@@ -1,0 +1,29 @@
+<h1>Articles</h1>
+<%= link_to "new", new_article_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Checkbox</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |a| %>
+    <tr>
+      <td><%= a.title %></td>
+      <td><%= a.text %> </td>
+      <td><%= a.checkbox %> </td>
+      <td><%= link_to "show", article_path(a)  %> </td>
+      <td><%= link_to "edit", edit_article_path(a)  %> </td>
+      <td><%= link_to "delete", article_path(a), method: :delete, data: {confirm: "ARE YOU SURE?"}  %> </td>
+
+
+
+    </tr>
+    <%end%>
+</tbody>
+</table>

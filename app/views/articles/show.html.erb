@@ -1,0 +1,50 @@
+<p>
+  <strong>Title</strong></br>
+  <%= @article.title %>
+</p>
+<p>
+<strong>Text</strong></br>
+<%= @article.text %>
+</p>
+<p>
+<strong>Checkbox</strong></br>
+<%= @article.checkbox %>
+</p>
+
+
+<button id="comment_button" type="button">COMMENT?</button>
+<%#= render "comments/form", comment: [@article, @comment] %>
+
+
+
+<form id="form_two" data-article-id="<%= @article.id %>">
+  Commentor:<br>
+  <input id="html_form_commentor" type="text" name="commentor">
+  <br>
+  Body:<br>
+  <input id="html_form_body" type="text" name="body">
+  Checkbox:<br>
+  <br><br>
+  <input id="html_form_checkbox" type="checkbox" name="checkbox">
+  <br><br>
+
+  <button class="save" type="button">SAVE</button>
+
+</form>
+<button id="comments_table_button" type="button">READ COMMENT?</button>
+<table id="comments_table">
+  <thead>
+    <tr>
+      <th>Commentor</th>
+      <th>Body</th>
+      <th>article</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= render  @comments %>
+</tbody>
+</table>
+
+<%= link_to "edit", edit_article_path(@article) %>
+<%= link_to "index", articles_path %>
+<%= link_to "sign_out", destroy_user_session_path, method: :delete, data: {confirm: "ARE YOU SURE?"}  %>

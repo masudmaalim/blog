@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Commentor</th>
+      <th>Body</th>
+      <th>article</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |c|%>
+    <tr>
+      <td><%= c.commentor %><td>
+      <td><%= c.body %><td>
+      <td><%= c.article_id %><td>
+      <td><%= link_to "show", article_comment_path(@article, c) %><td>
+      <td><%= link_to "edit", edit_article_comment_path(@article, c) %><td>
+      <td><%= link_to "delete", article_comment_path(@article, c), method: :delete, data: {confirm: "ARE YOU SURE?"} %><td>
+
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>

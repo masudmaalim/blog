@@ -1,0 +1,19 @@
+<%= form_for comment do |f|%>
+
+<p>
+<%= f.label :commentor%></br>
+<%= f.text_field :commentor%>
+</p>
+<p>
+<%= f.label :body%></br>
+<%= f.text_field :body%>
+</p>
+<p>
+<!-- <%= f.label :article%></br>
+<%= f.collection_select(:article, Article.all, :id, :title)%>
+</p> -->
+
+<p>
+<%= f.submit %>
+</p>
+<% end %>

@@ -1,0 +1,9 @@
+<strong> commentor </strong>
+<%= @comment.commentor%>
+<strong> body </strong>
+<%= @comment.body%>
+<strong> article </strong>
+<%= @comment.article_id%>
+
+<%= link_to "edit", edit_article_comment_path(@article, @comment) %>
+<%= link_to "index", article_comments_path(@article) %>

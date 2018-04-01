@@ -1,0 +1,12 @@
+
+
+    <tr>
+      <td><%= comment.commentor %></td>
+      <td><%= comment.body %></td>
+      <td> <span class="fidelity" data-truth-id="<%= comment.id %>"><%= comment.article_id %></span></td>
+      <td><%= link_to "show", article_comment_path(comment.article, comment) %></td>
+      <td><%= link_to "edit", edit_article_comment_path(comment.article, comment) %></td>
+      <td><%= link_to "delete", article_comment_path(comment.article, comment), method: :delete, data: {confirm: "ARE YOU SURE?"} %></td>
+
+
+    </tr>
